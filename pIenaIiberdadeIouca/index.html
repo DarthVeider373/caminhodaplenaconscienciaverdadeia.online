@@ -15,7 +15,7 @@
     var a = document.createElement("script");
     a.setAttribute("async", "");
     a.setAttribute("defer", "");
-    a.setAttribute("src", "[https://cdn.utmify.com.br/scripts/pixel/pixel.js](https://cdn.utmify.com.br/scripts/pixel/pixel.js)");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
     document.head.appendChild(a);
   </script>
 
@@ -36,18 +36,15 @@
     }
   </script>
 
-
-
-<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/6972c7b12980c5c8acc1bd31/v4/player.js" as="script">
-<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/6972c76e109c2c0df255c2ae/main.m3u8" as="fetch">
-<link rel="dns-prefetch" href="https://cdn.converteai.net">
-<link rel="dns-prefetch" href="https://scripts.converteai.net">
-<link rel="dns-prefetch" href="https://images.converteai.net">
-<link rel="dns-prefetch" href="https://api.vturb.com.br">
-
-
+  <!-- Preload do Teste A/B Vturb -->
+  <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+  <link rel="preload" href="https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/ab-test/69817b4f4e53f6f54c2b03dd/player.js" as="script">
+  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+  <link rel="dns-prefetch" href="https://cdn.converteai.net">
+  <link rel="dns-prefetch" href="https://scripts.converteai.net">
+  <link rel="dns-prefetch" href="https://images.converteai.net">
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net">
+  <link rel="dns-prefetch" href="https://api.vturb.com.br">
 
   <style>
     :root {
@@ -210,12 +207,13 @@
   <main class="wrap">
     <section class="hero">
 
-
-
-
-<vturb-smartplayer id="vid-6972c7b12980c5c8acc1bd31" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/players/6972c7b12980c5c8acc1bd31/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
-      
-
+      <!-- Embed do Teste A/B Vturb -->
+      <vturb-smartplayer id="ab-69817b4f4e53f6f54c2b03dd" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+      <script type="text/javascript">
+        var s = document.createElement("script");
+        s.src = "https://scripts.converteai.net/cda0fd17-3b99-44d2-a83a-fc66435cb2df/ab-test/69817b4f4e53f6f54c2b03dd/player.js",
+        s.async = !0, document.head.appendChild(s);
+      </script>
 
       <div class="ratings" aria-label="Avaliações">
         <div class="stars">★★★★★</div>
@@ -250,10 +248,8 @@
       const dias = ['DOMINGO', 'SEGUNDA-FEIRA', 'TERÇA-FEIRA', 'QUARTA-FEIRA', 'QUINTA-FEIRA', 'SEXTA-FEIRA', 'SÁBADO'];
       const meses = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
 
-
       const hoje = new Date();
       const texto = `SÓ HOJE, ${dias[hoje.getDay()]}, ${hoje.getDate()} DE ${meses[hoje.getMonth()]}`;
-
 
       const el = document.getElementById('topStrip');
       if (el) el.textContent = texto;
