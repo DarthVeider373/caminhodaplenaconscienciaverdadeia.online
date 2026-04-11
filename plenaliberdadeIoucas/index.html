@@ -23,6 +23,35 @@
   document.head.appendChild(a);
 </script>
 
+  <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttonUrl = document.querySelectorAll("a[href]");
+        try {
+          const urlParams = new URLSearchParams(window.location.search);
+          if (!urlParams.toString()) return; // evita adicionar ? vazio
+          buttonUrl.forEach((a) => {
+            const originalUrl = new URL(a.href);
+            if (
+              ["mailto:", "tel:", "javascript:"].some((p) =>
+                a.href.startsWith(p)
+              )
+            )
+              return;
+            if (originalUrl) {
+              urlParams.forEach((value, key) => {
+                if (!originalUrl.searchParams.has(key)) {
+                  originalUrl.searchParams.set(key, value);
+                }
+              });
+              a.href = originalUrl.toString();
+            }
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      });
+    </script>
+
   <!--P-->
   
   <style>
